@@ -1,0 +1,8 @@
+body {
+    background: url(../cat.jpg);
+}
+.thanks {
+    font-size: 200px;
+    color: darkgreen;
+    text-align: center;
+}
