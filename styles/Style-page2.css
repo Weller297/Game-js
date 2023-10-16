@@ -1,8 +1,21 @@
 body {
-    background: url(../cat.jpg);
+    background: url(../images/scary.wall.jpg)  center /cover;
 }
 .thanks {
     font-size: 200px;
-    color: darkgreen;
+    color: red;
     text-align: center;
+}
+
+.red {
+    color: red;
+}
+.violet {
+    color: blue;
+}
+.yellow {
+    color: yellow;
+}
+.green {
+    color: green;
 }

@@ -33,8 +33,10 @@ a {
     border: 5px solid white;
     border-radius: 50%;
     position: absolute;
-    left: 15px;
+    left: 50px;
     top: 10%;
+    z-index: 50;
+
     }
 .start__text {
     font-size: 50px;
@@ -44,7 +46,7 @@ a {
 .item {
     background: var(--red);
     display: flex;
-
+    
 }
 .top {
     position: absolute;
@@ -106,6 +108,54 @@ a {
     top: 75%;
 }
 
+.item_10 {
+width: 90%;
+height: 50px;
+top: 50%;
+left: 0;
+}
+.item_11 {
+    width: 90%;
+    height: 50px;
+    top: 70%;
+    right: 0;
+}
+.item_12 {
+    width: 50px;
+    height: 35%;
+    top: 0;
+    left: 200px;
+}
+.item_13 {
+    width: 50px;
+    height: 35%;
+    top: 16%;
+    left: 400px;
+}
+.item_14 {
+    width: 50px;
+    height: 35%;
+    top: 0;
+    left: 600px;
+}
+.item_15 {
+    width: 50px;
+    height: 35%;
+    top: 16%;
+    left: 800px;
+}
+.item_16 {
+    width: 50px;
+    height: 35%;
+    top: 0;
+    left: 1000px;
+}
+.item_17 {
+    width: 50px;
+    height: 35%;
+    top: 16%;
+    left: 1200px;
+}
 .over {
     display: none;
     justify-content: center;
@@ -122,7 +172,7 @@ a {
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 90%;
+    width: 100%;
     background: rgb(117, 0, 167);
     position: absolute;
     right: 0;
@@ -155,12 +205,13 @@ a {
     right: 0;
 }
 .wall:nth-last-of-type(14) {
-    width: 100%;
+    width: 90%;
     height: 30px;
     position: absolute;
     bottom: 0;
+    left: 0;
 }
-.wall:nth-last-of-type(13) {
+.wall:nth-last-of-type(16) {
     width: 30px;
     height: 100%;
     position: absolute;
@@ -181,8 +232,14 @@ a {
 }
 .danger__two {
     transform: rotate(140deg);
-    top: 40%;
-    right: -150px;
+    top: 50%;
+    right: 0;
+
+}
+.danger__line-three {
+    top: 20%;
+    right: 0;
+    transform: rotate(90deg);
 
 }
 .danger__three {
@@ -195,20 +252,35 @@ a {
     animation: line_1 20s linear infinite;
 
 }
+.danger__four {
+    left: 40%;
+    animation: line_2 20s linear infinite;
+
+}
+.danger__five {
+    left: 70%;
+    animation: line_3 20s linear infinite;
+
+}
 .danger__line-througt {
     width: 95.5%;
     height: 2px;
     position: absolute;
     top: 71.5%;
     right: -83px;
-    transform: rotate(24deg);
+ transform: rotate(24deg);   
     background: darkgoldenrod;
     z-index: -5;
 }
 .througt_two {
     transform: rotate(140deg);
-    top: 40%;
-    right: -150px;
+    top: 50%;
+    right: 0;
+}
+.througt_three {
+    transform: rotate(90deg);
+    top: 20%;
+    right: 0;
 }
 
 .danger__block {
@@ -243,8 +315,102 @@ right: 850px;
 .home__text {
     font-size: 50px;
     color: var(--white);
-    padding-top: 15px;
+    margin-top: -55px;
+
 }
+
+
+.paint,
+.code {
+    width: 50px;
+    height: 220px;
+    border: 2px solid white;
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    border-radius: 5px;
+
+}
+.code {
+    left: 70px;
+    height: 330px;
+}
+.color__container {
+    background: none;
+}
+
+
+.colors {
+    border: 1px solid white;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.color__violet {
+    background: blue;
+}
+
+.color__green {
+    background: green;
+}
+
+.color__yellow {
+    background: yellow;
+}
+
+.color__red {
+    background: red;
+}
+
+.color__none,
+.color__yes {
+    width: 100%;
+    height: 100%;
+}
+
+.end {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: black;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    position: relative;
+}
+
+.it__is-all {
+    cursor: pointer;
+    position: absolute;
+    right: 200px;
+    bottom: 0;
+    height: 240px;
+}
+.help {
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    bottom: 100px;
+    left: 130px;
+    width: 220px;
+    
+}
+.help__two {
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    bottom: -20px;
+    right: 10px;
+    width: 220px;
+    text-align: center;
+}
+
 
 @keyframes line_1 {
     0% {
@@ -268,9 +434,30 @@ right: 850px;
     }
 
 }
-@keyframes block {
+@keyframes line_2 {
     0% {
-        top: 80%;
+        top: 10%;
+
+    }
+    25% {
+        top: 90%;
+
+    }
+    50% {
+        top: 10%;
+
+    }
+    75% {
+        top: 90%;
+
+    }
+    100% {
+        top: 10%;
+    }
+}
+@keyframes line_3 {
+    0% {
+        top: 90%;
 
     }
     25% {
@@ -278,7 +465,7 @@ right: 850px;
 
     }
     50% {
-        top: 80%;
+        top: 90%;
 
     }
     75% {
@@ -286,7 +473,28 @@ right: 850px;
 
     }
     100% {
-        top: 80%;
+        top: 90%;
+    }
+}
+@keyframes block {
+    0% {
+        top: 90%;
+
+    }
+    25% {
+        top: 0%;
+
+    }
+    50% {
+        top: 90%;
+
+    }
+    75% {
+        top: 0%;
+
+    }
+    100% {
+        top: 90%;
     }
 
 }
