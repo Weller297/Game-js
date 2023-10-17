@@ -5,8 +5,9 @@ let item = document.querySelectorAll('.item'),
     lose = document.querySelector('.over'),
     time = document.querySelector('.timeout'),
     start = document.querySelector('.start'),
-    dangerLine = document.querySelectorAll('.danger__line'),
-    dangerThrougt = document.querySelectorAll('.danger__line-througt'),
+    dangerLine = document.querySelector('.danger__line'),
+    dangerLineTwo = document.querySelector('.danger__line-two'),
+    dangerThrougt = document.querySelector('.danger__line-througt'),
     colors = document.querySelectorAll('.colors'),
     codeContainers = document.querySelectorAll('.color__container'),
     end = document.querySelector('.end'),
@@ -47,45 +48,56 @@ start.addEventListener('click', () => {
 })
 
 
-
-
-
-
-dangerLine.forEach((info) => {
   function danger() {
-
-
-    if (info.style.display == 'flex') {
-      info.style.display = 'none';
+    
+    if (dangerLine.style.display == 'flex') {
+      dangerLine.style.display = 'none';
+      function getRandom(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+      let a = getRandom(140, 220)
+      
+      dangerLine.style = `transform: rotate(${a}deg);`
+      dangerThrougt.style = `transform: rotate(${a}deg);`
     }else {
-      info.style.display = 'flex';
+      dangerLine.style.display = 'flex';
     }
 
-    setTimeout(danger, 1666); 
+    setTimeout(danger, 700); 
   }
-  setTimeout(danger, 1666); 
+  setTimeout(danger, 700); 
   
-})
 
-
-function container() {
-  function getRandom(min, max) {
-    return Math.random() * (max - min) + min;
+  function circle() {
+    if (dangerLineTwo.style.visibility == 'visible') {
+      dangerLineTwo.style.visibility  = 'hidden';
+    }else {
+      dangerLineTwo.style.visibility  = 'visible';
+    }
+    setTimeout(circle, 700); 
   }
-  let a = getRandom(140, 220)
+  setTimeout(circle, 700); 
 
-  dangerLine.forEach((info) => {
-    info.style = `transform: rotate(${a}deg);`
-  })
 
-  dangerThrougt.forEach((info) => {
-      info.style = `transform: rotate(${a}deg);`
+
+// function container() {
+//   function getRandom(min, max) {
+//     return Math.random() * (max - min) + min;
+//   }
+//   let a = getRandom(140, 220)
+
+//   dangerLine.forEach((info) => {
+//     info.style = `transform: rotate(${a}deg);`
+//   })
+
+//   dangerThrougt.forEach((info) => {
+//       info.style = `transform: rotate(${a}deg);`
     
-  })
+//   })
 
-  setTimeout(container, 2000); 
-}
-setTimeout(container, 2000); 
+//   setTimeout(container, 2000); 
+// }
+// setTimeout(container, 2000); 
 
 
 
