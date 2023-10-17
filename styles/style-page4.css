@@ -1,0 +1,301 @@
+:root {
+    --black: #000;
+    --white: #fff;
+    --red: red;
+    --green: green;
+}
+body {
+    background: var(--black);
+}
+
+a {
+    text-decoration: none;
+}
+.page4 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+.item {
+    background: var(--red);
+    display: flex;
+    
+}
+
+
+
+.start {
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    background: greenyellow;
+    border: 5px solid white;
+    border-radius: 50%;
+    position: absolute;
+    left: 50px;
+    top: 10%;
+    z-index: 50;
+
+}
+.start__text {
+    font-size: 50px;
+    color: var(--white);
+    margin-top: -60px;
+}
+.over {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: var(--black);
+    z-index: 70;
+    position: relative;
+    
+}
+.timeout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: rgb(117, 0, 167);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 40;
+}
+.timeout__text {
+    font-size: 50px;
+    color: var(--white);
+    margin-bottom: 22px;
+}
+.timeout_red {
+    color: var(--green);
+}
+
+.game__over {
+    z-index: 60;
+    font-size: 150px;
+    color: white;
+    text-align: center;
+    
+}
+
+
+.saw__box {
+    animation: saw-box 38s linear infinite;
+    position: absolute;
+    top: 200px;
+    width: 400px;
+    height: 20px;
+}
+.saw {
+    width: 100%;
+    height: 100%;
+    animation: saw 250ms linear infinite;
+    margin-left: -185px;
+}
+.saw__two {
+    width: 30px;
+    height: 400px;
+    position: absolute;
+    top: -200px;
+}
+.item_1 {
+    position: absolute;
+    top: 400px;
+    width: 90%;
+    height: 50px;
+}
+.item_2 {
+    position: absolute;
+    top: 0px;
+    left: 300px;
+    height: 330px;
+    width: 20px;
+}
+.item_3 {
+    position: absolute;
+    top: 70px;
+    left: 370px;
+    height: 330px;
+    width: 20px;
+}
+.item_4 {
+    position: absolute;
+    top: 0px;
+    left: 440px;
+    height: 330px;
+    width: 20px;
+}
+.item_5 {
+    position: absolute;
+    top: 70px;
+    left: 510px;
+    height: 330px;
+    width: 20px;
+}
+.item_6 {
+    position: absolute;
+    top: 0px;
+    left: 580px;
+    height: 330px;
+    width: 20px;
+}
+.item_7 {
+    position: absolute;
+    top: 70px;
+    left: 650px;
+    height: 330px;
+    width: 20px;
+}
+.item_8 {
+    position: absolute;
+    top: 0px;
+    left: 720px;
+    height: 330px;
+    width: 20px;
+}
+.item_9 {
+    position: absolute;
+    top: 70px;
+    left: 790px;
+    height: 330px;
+    width: 20px;
+}
+
+.press {
+    width: 90px;
+    height: 400px;
+    position: absolute;
+    top: -400px;
+}
+.press__one {
+    animation: press 2000ms linear infinite;
+    right: 300px;
+}
+.press__two {
+    animation: press-two 4000ms linear infinite;
+    right: 600px;
+}
+.press__three {
+    animation: press 2000ms linear infinite;
+    right: 900px;
+}
+
+.danger__ray {
+    display: none;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    right: 0;
+}
+.danger__ray-througt {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: darkgoldenrod;
+    z-index: -5;
+}
+
+.door {
+    position: absolute;
+    bottom: 30px;
+}
+.door__one {
+    left: 200px;
+}
+.door__two {
+    left: 500px;
+}
+.door__three {
+    left: 800px;
+}
+.door__four {
+    left: 1100px;
+}
+.door__five {
+    left: 1400px;
+}
+.info {
+    font-size: 30;
+    color: white;
+}
+
+
+.wall:nth-last-of-type(1) {
+    width: 89%;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.wall:nth-last-of-type(2) {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.wall:nth-last-of-type(3) {
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+.wall:nth-last-of-type(4) {
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+@keyframes saw {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes saw-box {
+    0% {
+        right: 1800px;
+    }
+    
+    100% {
+        right: -400px;
+        display: none;
+    }
+}
+
+@keyframes press {
+
+    15% {
+        top: -420px;
+    }
+    30% {
+        top: 0px;
+
+    }
+}
+@keyframes press-two {
+    15% {
+        top: -420px;
+    }
+    30% {
+        top: 0px;
+
+    }
+}

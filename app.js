@@ -11,7 +11,15 @@ let item = document.querySelectorAll('.item'),
     colors = document.querySelectorAll('.colors'),
     codeContainers = document.querySelectorAll('.color__container'),
     end = document.querySelector('.end'),
-    itsAll = document.querySelector('.it__is-all')
+    itsAll = document.querySelector('.it__is-all'),
+    page4 = document.querySelector('.page4'),
+    dangerRayOne = document.querySelector('.ray__one'),
+    dangerRayTwo = document.querySelector('.ray__two'),
+    dangerRayThree = document.querySelector('.ray__three'),
+    rayThrougtOne = document.querySelector('.ray__througt-one'),
+    rayThrougtTwo = document.querySelector('.ray__througt-two'),
+    rayThrougtThree = document.querySelector('.ray__througt-three')
+
 
     
     
@@ -44,7 +52,8 @@ setTimeout(over, 500);
 
 start.addEventListener('click', () => {
     time.style = 'display: none';
-
+    start.style = 'display: none';
+    page4.style = 'display: flex';
 })
 
 
@@ -77,6 +86,56 @@ start.addEventListener('click', () => {
     setTimeout(circle, 700); 
   }
   setTimeout(circle, 700); 
+
+
+  function rayOne() {
+    if (dangerRayOne.style.display == 'flex') {
+      dangerRayOne.style.display  = 'none';
+      function getRandom(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+      let a = getRandom(0, 100)
+      dangerRayOne.style.top = `${a}%`
+      rayThrougtOne.style.top = `${a}%`
+    }else {
+      dangerRayOne.style.display  = 'flex';
+    }
+
+    setTimeout(rayOne, 1000); 
+  }
+  setTimeout(rayOne, 1000); 
+  function rayTwo() {
+    if (dangerRayTwo.style.display == 'flex') {
+      dangerRayTwo.style.display  = 'none';
+      function getRandom(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+      let a = getRandom(0, 100)
+      dangerRayTwo.style.top = `${a}%`
+      rayThrougtTwo.style.top = `${a}%`
+    }else {
+      dangerRayTwo.style.display  = 'flex';
+    }
+
+    setTimeout(rayTwo, 1000); 
+  }
+  setTimeout(rayTwo, 1000); 
+  function rayThree() {
+    if (dangerRayThree.style.display == 'flex') {
+      dangerRayThree.style.display  = 'none';
+      function getRandom(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+      let a = getRandom(0, 100)
+      dangerRayThree.style.top = `${a}%`
+      rayThrougtThree.style.top = `${a}%`
+    }else {
+      dangerRayThree.style.display  = 'flex';
+    }
+
+    setTimeout(rayThree, 1000); 
+  }
+  setTimeout(rayThree, 1000); 
 
 
 
