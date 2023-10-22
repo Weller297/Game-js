@@ -244,7 +244,20 @@ colors[0].addEventListener('click', () => {
 
   })
 
+let secretWallOne = document.querySelector('.secret__key-wall');
 
 
+secretWallOne.addEventListener('mouseover', () => {
+  secretWallOne.style.opacity = '0'
+  setTimeout(() => {
+    secretWallOne.style.display = 'none'
+  }, 1000);
+})
+
+  
+
+
+
+  
 
 

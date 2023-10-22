@@ -197,30 +197,30 @@ left: 0;
 }
 
 
-.wall:nth-last-of-type(15) {
+.wall:nth-last-of-type(10) {
     width: 89%;
     height: 30px;
     position: absolute;
     top: 0;
     right: 0;
 }
-.wall:nth-last-of-type(14) {
+.wall:nth-last-of-type(8) {
     width: 90%;
     height: 30px;
     position: absolute;
     bottom: 0;
     left: 0;
 }
-.wall:nth-last-of-type(16) {
+.wall:nth-last-of-type(9) {
     width: 30px;
     height: 100%;
     position: absolute;
     right: 0;
-    top: 0;
+    bottom: 0;
 }
 
 
-.wall__two:nth-last-of-type(1) {
+.wall__two:nth-last-of-type(5) {
     width: 89%;
     height: 30px;
     position: absolute;
@@ -454,10 +454,106 @@ right: 850px;
 }
 
 
+
+.secret__key-wall {
+    position: absolute;
+    top: 50.8%;
+    right: 38px;
+    height: 30px;
+    width: 127px;
+    background: #a70000;
+    transition: all 1500ms;
+    z-index: 6;
+}
+
+.secret__key-one {
+    position: absolute;
+    right: 68px;
+    top: 50.8%;
+    z-index: 4;
+}
+.secret__key-pool {
+    position: absolute;
+    top: 50.8%;
+    right: 38px;
+    height: 30px;
+    width: 127px;
+    background: black;
+    transition: all 1500ms;
+    z-index: 2;
+}
+
+.secret__lock {
+    display: flex;
+    position: absolute;
+    top: 32%;
+    right: 257px;
+    height: 90px;
+    width: 90px;
+}
+.secret__lock-img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.secret__inp {
+    width: 100px;
+    height: 20px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    outline: none;
+    position: absolute;
+    bottom: 700px;
+    right: 249px;
+}
+.secret__btn {
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    border-radius: 3px;
+    text-align: center;
+    border: none;
+    outline: none;
+    position: absolute;
+    bottom: 700px;
+    right: 230px;
+}
+.secret__btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.secret__code {
+    font-size: 30px;
+    color: white;
+    
+}
+
+.secret__door {
+    position: absolute;
+    right: 260px;
+    top: 29%;
+    height: 200px;
+}
+.link__to-page7 {
+    cursor: default;
+}
+.Locked {
+    text-align: right;
+    width: 200px;
+    position: absolute;
+    right: 370px;
+    top: 29%;
+    font-size: 30px;
+    color: white;
+    opacity: 0;
+    transition: all 400ms;
+}
 @keyframes line_1 {
     0% {
         top: 90%;
-
+        
     }
     25% {
         top: 10%;

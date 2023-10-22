@@ -1,0 +1,333 @@
+body {
+    background: black;
+}
+
+a {
+    text-decoration: none;
+}
+.page8 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+.item {
+    background: red;
+    display: flex;
+}
+.item__left-wall {
+    height: 100%;
+    width: 500px;
+    position: absolute;
+    left: -500px;
+    transition: all 500ms;
+    /* animation: left-wall 5s linear infinite */
+}
+.item__right-wall {
+    height: 100%;
+    width: 500px;
+    position: absolute;
+    right: -500px;
+    transition: all 500ms;
+    /* animation: right-wall 5s linear infinite */
+}
+.item__top-wall {
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: -500px;
+    transition: all 500ms;
+    /* animation: top-wall 5s linear infinite */
+}
+.item__bottom-wall {
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    bottom: -500px;
+    transition: all 500ms;
+    /* animation: bottom-wall 5s linear infinite */
+}
+
+
+.start {
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    background: greenyellow;
+    border: 5px solid white;
+    border-radius: 50%;
+    position: absolute;
+    left: 48%;
+    top: 45%;
+    z-index: 50;
+
+}
+.start__text {
+    font-size: 50px;
+    color: white;
+    margin-top: -60px;
+}
+.over {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: black;
+    z-index: 70;
+    position: relative;
+    
+}
+.timeout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: rgb(117, 0, 167);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 40;
+}
+
+.timeout_red {
+    color: green;
+}
+
+.game__over {
+    z-index: 60;
+    font-size: 150px;
+    color: white;
+    text-align: center;
+    
+}
+.health__box {
+    position: absolute;
+    top: 0px;
+    left: 200px;
+    z-index: 50;
+}
+.health__text {
+    font-size: 40px;
+    color: white;
+    
+}
+.health__bar {
+    height: 30px;
+    width: 220px;
+    background: rgb(164, 255, 27);
+    margin-top: -30px;
+}
+.health__enemy-box {
+    position: absolute;
+    top: 0px;
+    right: 200px;
+    z-index: 50;
+}
+.health__enemy-text {
+    text-align: right;
+    font-size: 40px;
+    color: white;
+}
+.health__enemy-bar {
+    height: 30px;
+    width: 700px;
+    background: rgb(226, 20, 226);
+    margin-top: -30px;
+}
+.circle {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    border: 1px solid white;
+    background: greenyellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    z-index: 51;
+
+}
+
+.danger__ray {
+    display: none;
+    width: 100%;
+    height: 15px;
+    position: absolute;
+    right: 0;
+}
+.danger__ray-througt {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: darkgoldenrod;
+    z-index: -5;
+}
+.danger__rotate {
+    transform: rotate(90deg);
+}
+
+.heal {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.heal__box {
+    cursor: pointer;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 45%;
+    right: 45%;
+    display: none;
+    flex-direction: column;
+}
+
+.heal__text {
+    cursor: default;
+    font-size: 30px;
+    color: white;
+    margin-bottom: -5px;
+}
+
+.danger__wall-right {
+    width: 400px;
+    height: 40%;
+    position: absolute;
+    right: -420px;
+    top: 0;
+    transition: all 1000ms;
+    display: none;
+}
+.danger__wall-warning {
+    height: 40%;
+    width: 400px;
+    position: absolute;
+    right: -420px;
+    top: 0;
+    border: 5px solid darkgoldenrod;
+    transition: all 1000ms;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.warning__text {
+font-size: 200px;
+color: white;
+}
+
+.warning__death {
+    width: 100%;
+    height: 100%;
+}
+.warning__death-wall {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    position: absolute;
+    display: none;
+}
+.warning__death-save {
+    width: 200px;
+    height: 200px;
+    top: 45%;
+    right: 45%;
+    background: black;
+    border-radius: 50%;
+    border: 3px solid white;
+    z-index: 20;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    animation: save 10s linear infinite;
+}
+.death__text {
+    font-size: 40px;
+    color: white;
+}
+
+
+.danger {
+    display: none;
+}
+.danger__line-two {
+    visibility: hidden;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    top: 45%;
+    animation: danger-througt 10s linear infinite; 
+
+}
+.danger__througt-two {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 45.5%;
+    background: darkgoldenrod;
+    z-index: -5;
+    animation: danger-througt 10s linear infinite;
+
+}
+
+@keyframes danger-througt {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes save {
+    0% {
+        margin-right: -500px;
+    }
+    50% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-right: -500px;
+    }
+}
+/* @keyframes left-wall {
+    40% {
+        left: -300px;
+    }   
+    80% {
+        left: -450px;
+    } 
+}
+@keyframes right-wall {
+    40% {
+        right: -300px;
+
+    }
+    60% {
+        right: -450px;
+
+    }
+}
+@keyframes top-wall {
+    10% {
+        top: -450px;
+    }
+    90% {
+        top: -300px;
+    }
+}
+@keyframes bottom-wall {
+    0% {
+        bottom: -450px;
+    }
+    50% {
+        bottom: -300px;
+    }
+    100% {
+        bottom: -450px;
+    }
+} */
