@@ -268,11 +268,10 @@ function walls() {
         }
         ironSword.style.display = 'none'
       })
-  
-      
-      setTimeout(sword, 4200); 
     }
-    setTimeout(sword, 4200); 
+    setInterval(() => {
+      sword()
+    }, 4200);
 
 
   let healthEnemyInfo = document.querySelector('.health__enemy-text')
@@ -315,7 +314,7 @@ circle.addEventListener('click', () => {
       }, 300);
       setInterval(() => {
         death()
-      }, 12000);
+      }, 14000);
     }else if (kolvoClicks <= 0) {
       kolvoClicks = 200
       setInterval(() => {
@@ -325,6 +324,9 @@ circle.addEventListener('click', () => {
         let a = getRandom(463728, 8437685637564559)
         healthEnemyInfo.innerHTML = a
       }, 50);
+      setInterval(() => {
+        sword()
+      }, 4200);
     }
     }
     
