@@ -26,7 +26,7 @@ let item = document.querySelectorAll('.item'),
     dangerLineTwo = document.querySelector('.danger__line-two')
 
 let body = document.querySelector('body')
-let dange = document.querySelector('.danger')
+let dangerous = document.querySelector('.danger')
 
     
     
@@ -98,23 +98,24 @@ let bottomWall = document.querySelector('.item__bottom-wall')
 
 function walls() {
     function getRandom(min, max) {
-        return Math.random() * (max - min) + min;
-      }
-      let a = getRandom(380, 490)
-      let b = getRandom(380, 490)
-      let c = getRandom(380, 490)
-      let d = getRandom(380, 490)
-      
-      leftWall.style.left = `-${a}px`
-      rightWall.style.right = `-${b}px`
-      topWall.style.top = `-${c}px`
-      bottomWall.style.bottom = `-${d}px`
-      setTimeout(walls, 500); 
-}
-setTimeout(walls, 500); 
+      return Math.random() * (max - min) + min;
+    }
+    let a = getRandom(380, 490)
+    let b = getRandom(380, 490)
+    let c = getRandom(380, 490)
+    let d = getRandom(380, 490)
+    leftWall.style.left = `-${a}px`
+    rightWall.style.right = `-${b}px`
+    topWall.style.top = `-${c}px`
+    bottomWall.style.bottom = `-${d}px`
+    setTimeout(walls, 500); 
+  }
+  setTimeout(walls, 500); 
 
-
-function ray() {
+  
+  
+  
+  function ray() {
     if (dangerRayOne.style.display == 'flex') {
       dangerRayOne.style.display  = 'none';
       function getRandom(min, max) {
@@ -126,8 +127,8 @@ function ray() {
     }else {
       dangerRayOne.style.display  = 'flex';
     }
-
-
+    
+    
     if (dangerRayTwo.style.display == 'flex') {
       dangerRayTwo.style.display  = 'none';
       function getRandom(min, max) {
@@ -139,8 +140,8 @@ function ray() {
     }else {
       dangerRayTwo.style.display  = 'flex';
     }
-  
-  
+    
+    
     if (dangerRayThree.style.display == 'flex') {
       dangerRayThree.style.display  = 'none';
       function getRandom(min, max) {
@@ -152,8 +153,8 @@ function ray() {
     }else {
       dangerRayThree.style.display  = 'flex';
     }
-  
-  
+    
+    
     if (dangerRayFour.style.display == 'flex') {
       dangerRayFour.style.display  = 'none';
       function getRandom(min, max) {
@@ -178,8 +179,8 @@ function ray() {
     }else {
       dangerRayFive.style.display  = 'flex';
     }
-  
-  
+    
+    
     if (dangerRaySix.style.display == 'flex') {
       dangerRaySix.style.display  = 'none';
       function getRandom(min, max) {
@@ -204,8 +205,8 @@ function ray() {
     }else {
       dangerRaySeven.style.display  = 'flex';
     }
-
-
+    
+    
     if (dangerRayEight.style.display == 'flex') {
       dangerRayEight.style.display  = 'none';
       function getRandom(min, max) {
@@ -217,8 +218,8 @@ function ray() {
     }else {
       dangerRayEight.style.display  = 'flex';
     }
-
-
+    
+    
     if (dangerRayNine.style.display == 'flex') {
       dangerRayNine.style.display  = 'none';
       function getRandom(min, max) {
@@ -230,21 +231,58 @@ function ray() {
     }else {
       dangerRayNine.style.display  = 'flex';
     }
-
+    
     setTimeout(ray, 1000); 
   }
   setTimeout(ray, 1000); 
+  
+  
+    function sword() {
+      let ironSword = document.createElement('div')
+      let img = document.createElement('img')
+      img.src = 'images/Sword.webp'
+      img.alt = 'Damage'
+      ironSword.append(img)
+      ironSword.classList.add('sword')
+      let size = 70
+      ironSword.style.width = `${size}px`
+      ironSword.style.height = `${size}px`
+      img.style.width = `${size}px`
+      img.style.height = `${size}px`
+      function getRandom(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+      let a = getRandom(10, 75)
+      let b = getRandom(10, 75)
+      ironSword.style.top = `${a}%`
+      ironSword.style.right = `${b}%`
+      page8.append(ironSword)
+      
+      ironSword.addEventListener('click', () => {
+        let a = 0
+        while(a <= 3) {
+          a++
+          kolvoClicks = kolvoClicks - 1
+          healthEnemyBar.style.width = `${kolvoClicks * 5}px`
+          clicksEvent()
+        }
+        ironSword.style.display = 'none'
+      })
+  
+      
+      setTimeout(sword, 4200); 
+    }
+    setTimeout(sword, 4200); 
 
 
-
-
-let circle = document.querySelector('.circle')
-let kolvoClicks = 70
-let healthEnemyBar= document.querySelector('.health__enemy-bar')
-let deathWall = document.querySelector('.warning__death-wall')
-let deathSave = document.querySelector('.warning__death-save')
+  let healthEnemyInfo = document.querySelector('.health__enemy-text')
+  let deathWall = document.querySelector('.warning__death-wall')
+  let deathSave = document.querySelector('.warning__death-save')
+  let circle = document.querySelector('.circle')
+  let kolvoClicks = 100
+  let healthEnemyBar= document.querySelector('.health__enemy-bar')
 circle.addEventListener('click', () => {
-    function getRandom(min, max) {
+  function getRandom(min, max) {
         return Math.random() * (max - min) + min;
       }
       let a = getRandom(20, 80)
@@ -254,53 +292,73 @@ circle.addEventListener('click', () => {
       circle.style.left = `${b}%`
       circle.style.width = `${c}px`
       circle.style.height = `${c}px`
-      let clicks = --kolvoClicks
-      healthEnemyBar.style.width = `${clicks * 10}px`
-      console.log(clicks);
-      if (clicks == 60) {
-        body.style.background = 'blue'
-        dangerWallRight.style.display = 'flex'
-        dangerRightWarning.style.display = 'flex'
-        setTimeout(() => {
-          body.style.background = 'black'
-        }, 300);
+      --kolvoClicks
+      healthEnemyBar.style.width = `${kolvoClicks * 5}px`
+      clicksEvent()
+    })
 
-      }else if (clicks == 35) {
-        body.style.background = 'blue'
+    function clicksEvent() {
+    if (kolvoClicks == 85) {
+      body.style.background = 'blue'
+      dangerWallRight.style.display = 'flex'
+      dangerRightWarning.style.display = 'flex'
+      dangerWallTop.style.display = 'flex'
+      dangerTopWarning.style.display = 'flex'
 
-        setTimeout(() => {
-          body.style.background = 'black'
-        }, 300);
-        deathSave.style.display = 'flex'
-        setTimeout(() => {
-        deathWall.style.display = 'flex'
-        }, 2000);
-        setTimeout(() => {
-        deathSave.style.display = 'none'
-        deathWall.style.display = 'none'
-        }, 5000);
-        dange.style.display = 'flex'
-      }else if(clicks == 15) {
-        deathSave.style.display = 'flex'
-        setTimeout(() => {
-        deathWall.style.display = 'flex'
-        }, 2000);
-        setTimeout(() => {
-        deathSave.style.display = 'none'
-        deathWall.style.display = 'none'
-        }, 5000);
-      }else if (clicks <= 0) {
-        page8.style.display = 'none'
+      setTimeout(() => {
+        body.style.background = 'black'
+      }, 300);
+    }else if (kolvoClicks == 70) {
+      body.style.background = 'blue'
+      setTimeout(() => {
+        body.style.background = 'black'
+      }, 300);
+      setInterval(() => {
+        death()
+      }, 12000);
+    }else if (kolvoClicks <= 0) {
+      kolvoClicks = 200
+      setInterval(() => {
+        function getRandom(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+        let a = getRandom(463728, 8437685637564559)
+        healthEnemyInfo.innerHTML = a
+      }, 50);
+    }
+    }
+    
+    deathWall.addEventListener('mouseover', () => {
+      healths = healths - 100
+      hpBar.style.width = `${healths * 2}px`
+    })
+
+
+    function death() {
+      function getRandom(min, max) {
+        return Math.random() * (max - min) + min;
       }
-})
-deathWall.addEventListener('mouseover', () => {
-  healths = healths - 100
-  hpBar.style.width = `${healths * 2}px`
+      let a = getRandom(5, 75)
+      let b = getRandom(5, 75)
+        deathSave.style.top = `${a}%`
+        deathSave.style.right = `${b}%`
+        deathSave.style.display = 'flex'
+        setTimeout(() => {
+          deathWall.style.display = 'flex'
+        }, 2000);
+        setTimeout(() => {
+          deathWall.style.display = 'none'
+        }, 4000);
+        setTimeout(() => {
+          deathSave.style.display = 'none'
+        }, 5000);
+        dangerous.style.display = 'flex'
 
-})
-
-
-function healing() {
+      
+      
+    }
+    
+    function healing() {
   if(heal.style.display !== 'flex') {
     function getRandom(min, max) {
       return Math.random() * (max - min) + min;
@@ -321,20 +379,28 @@ function healing() {
     healTwo.style.display = 'flex'
   }
   
-  setTimeout(healing, 15000); 
+  setTimeout(healing, 10000); 
 }
-setTimeout(healing, 15000); 
+setTimeout(healing, 10000); 
 
 
 
 let dangerWallRight = document.querySelector('.danger__wall-right')
 let dangerRightWarning = document.querySelector('.danger__wall-warning')
+let dangerWallTop = document.querySelector('.danger__wall-top')
+let dangerTopWarning = document.querySelector('.danger__wall-warning-top')
+
 
 
 dangerWallRight.addEventListener('mouseover', () => {
   healths = healths - 35
   hpBar.style.width = `${healths * 2}px`
 })
+dangerWallTop.addEventListener('mouseover', () => {
+  healths = healths - 35
+  hpBar.style.width = `${healths * 2}px`
+})
+
 function dangerWalls() {
   function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
@@ -342,6 +408,8 @@ function dangerWalls() {
   let a = getRandom(1,3 )
   let b = getRandom(0,80)
   let c = getRandom(0,80)
+
+
   if (a == 1) {
     dangerRightWarning.style.right = '2000px'
     setTimeout(() => {
@@ -359,12 +427,27 @@ function dangerWalls() {
       dangerWallRight.style.right = '-500px'
       
     }, 3000);
-  }else {
-    dangerRightWarning.style.top = `${c}%`
-    dangerWallRight.style.top = `${c}%`
 
+
+  }else if (a == 2){
+    dangerTopWarning.style.top = '1500px'
+    setTimeout(() => {
+      dangerWallTop.style.top = '1500px'
+
+    }, 1000);
+    setTimeout(() => {
+      dangerTopWarning.style.right = `${c}%`
+      dangerWallTop.style.right = `${c}%`
+    }, 1500);
+    setTimeout(() => {
+      dangerTopWarning.style.top = '-500px'
+    }, 2000);
+    setTimeout(() => {
+      dangerWallTop.style.top = '-500px'
+      
+    }, 3000);
+    console.log(a);
   }
-  console.log(a);
   setTimeout(dangerWalls, 4000); 
 }
 setTimeout(dangerWalls, 4000); 
@@ -383,3 +466,30 @@ setTimeout(danger, 1000);
 
   
 
+/* -------  Update  ------- */
+
+
+let wallTRBL = document.querySelectorAll('.walls')
+wallTRBL.forEach((item) => {
+  item.addEventListener('mouseover', () => {
+    healths = healths - 20
+    hpBar.style.width = `${healths * 2}px`
+  })
+})
+
+let dangerRays = document.querySelectorAll('.danger__ray'),
+dangerRaysThr = document.querySelectorAll('.danger__ray-througt')
+dangerRays.forEach((item) => {
+  item.addEventListener('mouseover', () => {
+    healths = healths - 5
+    hpBar.style.width = `${healths * 2}px`
+  })
+})
+dangerRaysThr.forEach((item) => {
+  item.addEventListener('mouseover', () => {
+    healths = healths - 5
+    hpBar.style.width = `${healths * 2}px`
+  })
+})
+
+// sword()

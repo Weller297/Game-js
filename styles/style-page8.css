@@ -133,7 +133,7 @@ a {
 }
 .health__enemy-bar {
     height: 30px;
-    width: 700px;
+    width: 500px;
     background: rgb(226, 20, 226);
     margin-top: -30px;
 }
@@ -203,6 +203,27 @@ a {
     transition: all 1000ms;
     display: none;
 }
+.danger__wall-top {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: -420px;
+    right: 0;
+    transition: all 1300ms;
+    display: none;
+}
+.danger__wall-warning-top {
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    top: -420px;
+    right: 0;
+    border: 5px solid darkgoldenrod;
+    transition: all 1300ms;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
 .danger__wall-warning {
     height: 40%;
     width: 400px;
@@ -244,7 +265,6 @@ color: white;
     justify-content: center;
     align-items: center;
     display: none;
-    animation: save 10s linear infinite;
 }
 .death__text {
     font-size: 40px;
@@ -272,8 +292,14 @@ color: white;
     background: darkgoldenrod;
     z-index: -5;
     animation: danger-througt 10s linear infinite;
-
 }
+.sword {
+    position: absolute;
+    width: 70px;
+    cursor: pointer;
+}
+
+
 
 @keyframes danger-througt {
     0% {
@@ -283,17 +309,7 @@ color: white;
         transform: rotate(360deg);
     }
 }
-@keyframes save {
-    0% {
-        margin-right: -500px;
-    }
-    50% {
-        margin-left: -1000px;
-    }
-    100% {
-        margin-right: -500px;
-    }
-}
+
 /* @keyframes left-wall {
     40% {
         left: -300px;

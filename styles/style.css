@@ -550,6 +550,22 @@ right: 850px;
     opacity: 0;
     transition: all 400ms;
 }
+.send {
+    width: 85px;
+    height: 100px;
+    background: greenyellow;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    left: 50px;
+    top: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    padding-left: 15px;
+    color: black;
+}
 @keyframes line_1 {
     0% {
         top: 90%;
