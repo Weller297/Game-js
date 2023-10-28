@@ -38,8 +38,7 @@ let dangerous = document.querySelector('.danger')
     //     }
     //     setTimeout(over, 2000); 
 //   } 
-let heal = document.querySelector('.heal__box')
-let healTwo = document.querySelector('.heal__box-two')
+
 
 let healths = 110
 
@@ -54,16 +53,7 @@ item.forEach((info) => {
       }
     })
   })
-  heal.addEventListener('click', () => {
-    heal.style.display = 'none'
-    healths = healths + 50
-    hpBar.style.width = `${healths * 2}px`
-  })
-  healTwo.addEventListener('click', () => {
-    healTwo.style.display = 'none'
-    healths = healths + 50
-    hpBar.style.width = `${healths * 2}px`
-  })
+
   
   
 
@@ -494,4 +484,35 @@ dangerRaysThr.forEach((item) => {
   })
 })
 
+
+function Healbox() {
+  let heal = document.createElement('div')
+  let img = document.createElement('img')
+  img.src = 'images/heal.png'
+  img.alt = 'Heal'
+  heal.append(img)
+  heal.classList.add('heal__box')
+  let size = 90
+  heal.style.width = `${size}px`
+  heal.style.height = `${size}px`
+  img.style.width = `${size}px`
+  img.style.height = `${size}px`
+  function getRandom(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+  let a = getRandom(10, 75)
+  let b = getRandom(10, 75)
+  heal.style.top = `${a}%`
+  heal.style.right = `${b}%`
+  page8.append(heal)
+  
+  heal.addEventListener('click', () => {
+    healths = healths + 30
+    hpBar.style.width = `${healths * 2}px`
+    heal.style.display = 'none'
+  })
+}
+setInterval(() => {
+  Healbox()
+}, 10000);
 // sword()
